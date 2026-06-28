@@ -32,34 +32,32 @@
         </StackPanel>
 
         <!-- Menu -->
-        <StackPanel Grid.Row="1"
-                Margin="12">
+		<StackPanel Grid.Row="1" Margin="12">
 
-            <Button Content="🏠 Dashboard"
-                Style="{StaticResource SecondaryButtonStyle}"
-                Margin="0,5"/>
+			<Button Content="🏠 Dashboard"
+                    Command="{Binding NavDashboardCommand}"
+                    Style="{StaticResource SecondaryButtonStyle}" Margin="0,5"/>
 
-            <Button Content="👤 Người dùng"
-                Style="{StaticResource SecondaryButtonStyle}"
-                Margin="0,5"/>
+			<Button Content="👤 Người dùng"
+                    Command="{Binding NavUsersCommand}"
+                    Style="{StaticResource SecondaryButtonStyle}" Margin="0,5"/>
 
-            <Button Content="📁 Dự án"
-                Style="{StaticResource SecondaryButtonStyle}"
-                Margin="0,5"/>
+			<Button Content="📁 Dự án"
+                    Command="{Binding NavProjectsCommand}"
+                    Style="{StaticResource SecondaryButtonStyle}" Margin="0,5"/>
 
-            <Button Content="✅ Công việc"
-                Style="{StaticResource SecondaryButtonStyle}"
-                Margin="0,5"/>
+			<Button Content="✅ Công việc"
+                    Command="{Binding NavTasksCommand}"
+                    Style="{StaticResource SecondaryButtonStyle}" Margin="0,5"/>
 
-            <Button Content="📊 Báo cáo"
-                Style="{StaticResource SecondaryButtonStyle}"
-                Margin="0,5"/>
+			<Button Content="📊 Báo cáo"
+                    Command="{Binding NavReportsCommand}"
+                    Style="{StaticResource SecondaryButtonStyle}" Margin="0,5"/>
 
-            <Button Content="👤 Hồ sơ"
-                Style="{StaticResource SecondaryButtonStyle}"
-                Margin="0,5"/>
-
-        </StackPanel>
+			<Button Content="👤 Hồ sơ"
+                    Command="{Binding NavProfileCommand}"
+                    Style="{StaticResource SecondaryButtonStyle}" Margin="0,5"/>
+		</StackPanel>
 
         <!-- Logout -->
         <Button Grid.Row="2"

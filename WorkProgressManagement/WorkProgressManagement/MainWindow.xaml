@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:WorkProgressManagement"
         xmlns:views="clr-namespace:WorkProgressManagement.Views.UserControls"
         xmlns:pages="clr-namespace:WorkProgressManagement.Views.Pages"
+        xmlns:vm="clr-namespace:WorkProgressManagement.ViewModels"
         mc:Ignorable="d"
         Title="Work Progress Management"
         Height="800"
@@ -13,47 +14,62 @@
         MinHeight="700"
         MinWidth="1200"
         WindowStartupLocation="CenterScreen">
-    <Grid Background="{StaticResource BackgroundBrush}">
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="240"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+	<Window.DataContext>
+		<vm:MainViewModel/>
+	</Window.DataContext>
 
-        <!-- Sidebar -->
-        <Border Grid.Column="0"
+	<Window.Resources>
+		<DataTemplate DataType="{x:Type vm:DashboardViewModel}">
+			<pages:DashboardPage/>
+		</DataTemplate>
+		<DataTemplate DataType="{x:Type vm:ProjectsViewModel}">
+			<pages:ProjectsPage/>
+		</DataTemplate>
+		<DataTemplate DataType="{x:Type vm:TasksViewModel}">
+			<pages:TasksPage/>
+		</DataTemplate>
+		<DataTemplate DataType="{x:Type vm:UsersViewModel}">
+			<pages:UsersPage/>
+		</DataTemplate>
+		<DataTemplate DataType="{x:Type vm:ReportsViewModel}">
+			<pages:ReportsPage/>
+		</DataTemplate>
+		<DataTemplate DataType="{x:Type vm:ProfileViewModel}">
+			<pages:ProfilePage/>
+		</DataTemplate>
+	</Window.Resources>
+
+	<Grid Background="{StaticResource BackgroundBrush}">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="240"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+
+		<Border Grid.Column="0"
                 Background="{StaticResource CardBrush}"
                 BorderBrush="{StaticResource BorderBrush}"
                 BorderThickness="0,0,1,0">
+			<views:SidebarControl/>
+		</Border>
 
-            <views:SidebarControl/>
+		<Grid Grid.Column="1">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="70"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
 
-        </Border>
-
-        <!-- Main -->
-        <Grid Grid.Column="1">
-
-            <Grid.RowDefinitions>
-                <RowDefinition Height="70"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-
-            <!-- TopBar -->
-            <Border Grid.Row="0"
+			<Border Grid.Row="0"
                     Background="{StaticResource CardBrush}"
                     BorderBrush="{StaticResource BorderBrush}"
                     BorderThickness="0,0,0,1">
+				<views:TopBarControl/>
+			</Border>
 
-                <views:TopBarControl/>
-
-            </Border>
-
-            <!-- Content -->
-            <ContentControl x:Name="MainContent"
-                Grid.Row="1"
-                Margin="20"/>
-
-        </Grid>
-
-    </Grid>
+			<ContentControl x:Name="MainContent"
+                            Grid.Row="1"
+                            Margin="20"
+                            Content="{Binding CurrentView}"/>
+		</Grid>
+	</Grid>
 </Window>

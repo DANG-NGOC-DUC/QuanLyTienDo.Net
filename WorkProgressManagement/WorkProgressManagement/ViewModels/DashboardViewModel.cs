@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using WorkProgressManagement.Helpers;
+
 namespace WorkProgressManagement.ViewModels
 {
-    internal class Class1
-    {
-    }
+    public class DashboardViewModel : BaseViewModel { }
 }
