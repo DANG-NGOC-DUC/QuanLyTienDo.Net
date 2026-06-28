@@ -5,41 +5,156 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WorkProgressManagement.Views.Pages"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="{StaticResource BackgroundBrush}">
+             d:DesignHeight="650" d:DesignWidth="950"
+             Background="#F8FAFC">
 
-        <StackPanel>
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <Grid Margin="32">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-            <TextBlock Text="Dashboard"
-                   Style="{StaticResource TitleTextStyle}"
-                   Margin="0,0,0,20"/>
+            <StackPanel Grid.Row="0" Margin="0,0,0,24">
+                <TextBlock Text="Tổng quan hệ thống" FontSize="24" FontWeight="Bold" Foreground="#0F172A"/>
+                <TextBlock Text="Theo dõi nhanh tiến độ các dự án và công việc cá nhân của bạn." 
+                           FontSize="14" Foreground="#64748B" Margin="0,4,0,0"/>
+            </StackPanel>
 
-            <WrapPanel>
+            <Grid Grid.Row="1" Margin="0,0,0,32">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
-                <Border Style="{StaticResource CardStyle}" Width="220" Height="120">
-                    <StackPanel VerticalAlignment="Center">
-                        <TextBlock Text="12" FontSize="32" FontWeight="Bold" HorizontalAlignment="Center"/>
-                        <TextBlock Text="Projects" Style="{StaticResource BodyTextStyle}" HorizontalAlignment="Center"/>
+                <Border Grid.Column="0" Background="White" CornerRadius="10" Padding="20" Margin="0,0,12,0" 
+                        BorderBrush="#E2E8F0" BorderThickness="1">
+                    <StackPanel>
+                        <TextBlock Text="DỰ ÁN ĐANG CHẠY" FontSize="11" FontWeight="Bold" Foreground="#64748B"/>
+                        <TextBlock Text="04" FontSize="28" FontWeight="Bold" Foreground="#0F172A" Margin="0,8,0,0"/>
+                        <TextBlock Text="↑ 1 dự án mới tuần này" FontSize="12" Foreground="#10B981" Margin="0,4,0,0"/>
                     </StackPanel>
                 </Border>
 
-                <Border Style="{StaticResource CardStyle}" Width="220" Height="120">
-                    <StackPanel VerticalAlignment="Center">
-                        <TextBlock Text="35" FontSize="32" FontWeight="Bold" HorizontalAlignment="Center"/>
-                        <TextBlock Text="Tasks" Style="{StaticResource BodyTextStyle}" HorizontalAlignment="Center"/>
+                <Border Grid.Column="1" Background="White" CornerRadius="10" Padding="20" Margin="6,0,6,0" 
+                        BorderBrush="#E2E8F0" BorderThickness="1">
+                    <StackPanel>
+                        <TextBlock Text="VIỆC CẦN LÀM (TO-DO)" FontSize="11" FontWeight="Bold" Foreground="#64748B"/>
+                        <TextBlock Text="12" FontSize="28" FontWeight="Bold" Foreground="#3B82F6" Margin="0,8,0,0"/>
+                        <TextBlock Text="5 việc tới hạn hôm nay" FontSize="12" Foreground="#64748B" Margin="0,4,0,0"/>
                     </StackPanel>
                 </Border>
 
-                <Border Style="{StaticResource CardStyle}" Width="220" Height="120">
-                    <StackPanel VerticalAlignment="Center">
-                        <TextBlock Text="8" FontSize="32" FontWeight="Bold" HorizontalAlignment="Center"/>
-                        <TextBlock Text="Users" Style="{StaticResource BodyTextStyle}" HorizontalAlignment="Center"/>
+                <Border Grid.Column="2" Background="#FEF2F2" CornerRadius="10" Padding="20" Margin="12,0,0,0" 
+                        BorderBrush="#FECACA" BorderThickness="1">
+                    <StackPanel>
+                        <TextBlock Text="CÔNG VIỆC QUÁ HẠN" FontSize="11" FontWeight="Bold" Foreground="#EF4444"/>
+                        <TextBlock Text="02" FontSize="28" FontWeight="Bold" Foreground="#EF4444" Margin="0,8,0,0"/>
+                        <TextBlock Text="Cần cập nhật tiến độ gấp" FontSize="12" Foreground="#EF4444" Margin="0,4,0,0"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="4*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Column="0" Background="White" CornerRadius="10" Padding="20" Margin="0,0,12,0" 
+                        BorderBrush="#E2E8F0" BorderThickness="1">
+                    <StackPanel>
+                        <Grid Margin="0,0,0,16">
+                            <TextBlock Text="Dự án trọng điểm" FontSize="16" FontWeight="Bold" Foreground="#0F172A" HorizontalAlignment="Left"/>
+                            <Button Content="Xem tất cả →" FontSize="12" Foreground="#3B82F6" Background="Transparent" BorderThickness="0" Cursor="Hand" HorizontalAlignment="Right"/>
+                        </Grid>
+
+                        <Border BorderBrush="#F1F5F9" BorderThickness="0,0,0,1" Padding="0,12,0,12">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0" Margin="0,0,0,8">
+                                    <TextBlock Text="Hệ thống Quản lý Nhà hàng" FontWeight="SemiBold" Foreground="#0F172A" FontSize="14"/>
+                                    <TextBlock Text="75%" FontWeight="Bold" Foreground="#3B82F6" HorizontalAlignment="Right" FontSize="13"/>
+                                </Grid>
+                                <Grid Grid.Row="1">
+                                    <Border Height="6" Background="#E2E8F0" CornerRadius="3"/>
+                                    <Border Height="6" Width="320" HorizontalAlignment="Left" Background="#3B82F6" CornerRadius="3"/>
+                                </Grid>
+                            </Grid>
+                        </Border>
+
+                        <Border BorderBrush="#F1F5F9" BorderThickness="0,0,0,1" Padding="0,12,0,12">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0" Margin="0,0,0,8">
+                                    <TextBlock Text="Ứng dụng Quản lý gia phá" FontWeight="SemiBold" Foreground="#0F172A" FontSize="14"/>
+                                    <TextBlock Text="40%" FontWeight="Bold" Foreground="#F59E0B" HorizontalAlignment="Right" FontSize="13"/>
+                                </Grid>
+                                <Grid Grid.Row="1">
+                                    <Border Height="6" Background="#E2E8F0" CornerRadius="3"/>
+                                    <Border Height="6" Width="180" HorizontalAlignment="Left" Background="#F59E0B" CornerRadius="3"/>
+                                </Grid>
+                            </Grid>
+                        </Border>
+
                     </StackPanel>
                 </Border>
 
-            </WrapPanel>
+                <Border Grid.Column="1" Background="White" CornerRadius="10" Padding="20" Margin="12,0,0,0" 
+                        BorderBrush="#E2E8F0" BorderThickness="1">
+                    <StackPanel>
+                        <TextBlock Text="Việc cần xử lý ngay" FontSize="16" FontWeight="Bold" Foreground="#0F172A" Margin="0,0,0,16"/>
 
-        </StackPanel>
+                        <Border Background="#F8FAFC" CornerRadius="6" Padding="12" Margin="0,0,0,10">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <CheckBox Grid.Column="0" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                                <StackPanel Grid.Column="1">
+                                    <TextBlock Text="Thiết kế DB Schema cho Task" FontWeight="SemiBold" Foreground="#0F172A" FontSize="13" TextWrapping="Wrap"/>
+                                    <StackPanel Orientation="Horizontal" Margin="0,6,0,0">
+                                        <Border Background="#FEE2E2" CornerRadius="3" Padding="6,2" Margin="0,0,6,0">
+                                            <TextBlock Text="Gấp" FontSize="10" Foreground="#DC2626" FontWeight="Bold"/>
+                                        </Border>
+                                        <TextBlock Text="Hạn: Hôm nay" FontSize="11" Foreground="#64748B" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
 
-    </Grid>
+                        <Border Background="#F8FAFC" CornerRadius="6" Padding="12" Margin="0,0,0,10">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <CheckBox Grid.Column="0" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                                <StackPanel Grid.Column="1">
+                                    <TextBlock Text="Rà soát lại luồng phân quyền PM" FontWeight="SemiBold" Foreground="#0F172A" FontSize="13" TextWrapping="Wrap"/>
+                                    <StackPanel Orientation="Horizontal" Margin="0,6,0,0">
+                                        <Border Background="#FEF3C7" CornerRadius="3" Padding="6,2" Margin="0,0,6,0">
+                                            <TextBlock Text="Trung bình" FontSize="10" Foreground="#D97706" FontWeight="Bold"/>
+                                        </Border>
+                                        <TextBlock Text="Hạn: Ngày mai" FontSize="11" Foreground="#64748B" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+
+                    </StackPanel>
+                </Border>
+
+            </Grid>
+        </Grid>
+    </ScrollViewer>
 </UserControl>
