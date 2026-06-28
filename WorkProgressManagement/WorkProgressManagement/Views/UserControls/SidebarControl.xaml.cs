@@ -12,20 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WorkProgressManagement.Views.Pages;
 
-namespace WorkProgressManagement
+namespace WorkProgressManagement.Views.UserControls
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for SidebarControl.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class SidebarControl : UserControl
     {
-        public MainWindow()
+        public SidebarControl()
         {
             InitializeComponent();
-
-            MainContent.Content = new DashboardPage();
         }
     }
 }

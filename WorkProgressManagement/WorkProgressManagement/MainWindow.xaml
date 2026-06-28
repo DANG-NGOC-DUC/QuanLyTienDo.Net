@@ -4,9 +4,56 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WorkProgressManagement"
+        xmlns:views="clr-namespace:WorkProgressManagement.Views.UserControls"
+        xmlns:pages="clr-namespace:WorkProgressManagement.Views.Pages"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="Work Progress Management"
+        Height="800"
+        Width="1400"
+        MinHeight="700"
+        MinWidth="1200"
+        WindowStartupLocation="CenterScreen">
+    <Grid Background="{StaticResource BackgroundBrush}">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="240"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Sidebar -->
+        <Border Grid.Column="0"
+                Background="{StaticResource CardBrush}"
+                BorderBrush="{StaticResource BorderBrush}"
+                BorderThickness="0,0,1,0">
+
+            <views:SidebarControl/>
+
+        </Border>
+
+        <!-- Main -->
+        <Grid Grid.Column="1">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- TopBar -->
+            <Border Grid.Row="0"
+                    Background="{StaticResource CardBrush}"
+                    BorderBrush="{StaticResource BorderBrush}"
+                    BorderThickness="0,0,0,1">
+
+                <views:TopBarControl/>
+
+            </Border>
+
+            <!-- Content -->
+            <ContentControl x:Name="MainContent"
+                Grid.Row="1"
+                Margin="20"/>
+
+        </Grid>
+
     </Grid>
 </Window>

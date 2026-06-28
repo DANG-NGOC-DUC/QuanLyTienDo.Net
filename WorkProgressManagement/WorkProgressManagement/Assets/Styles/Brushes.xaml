@@ -2,16 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <SolidColorBrush
-        x:Key="PrimaryBrush"
-        Color="{StaticResource PrimaryColor}" />
-
-    <SolidColorBrush
-    x:Key="BackgroundBrush"
-    Color="{StaticResource BackgroundColor}" />
-
-    <SolidColorBrush
-    x:Key="CardBrush"
-    Color="{StaticResource CardColor}" />
+    x:Key="PrimaryBrush"
+    Color="{StaticResource PrimaryColor}" />
 
     <SolidColorBrush
     x:Key="BackgroundBrush"
