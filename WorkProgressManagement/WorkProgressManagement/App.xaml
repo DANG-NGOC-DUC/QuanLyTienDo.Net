@@ -3,7 +3,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:WorkProgressManagement"
              StartupUri="MainWindow.xaml">
+
     <Application.Resources>
-         
+
+        <ResourceDictionary>
+
+            <ResourceDictionary.MergedDictionaries>
+
+                <ResourceDictionary Source="Assets/Styles/Colors.xaml"/>
+
+                <ResourceDictionary Source="Assets/Styles/Brushes.xaml"/>
+                
+                <ResourceDictionary Source="Assets/Styles/ButtonStyles.xaml"/>
+
+                <ResourceDictionary Source="Assets/Styles/TextBoxStyles.xaml"/>
+
+                <ResourceDictionary Source="Assets/Styles/ComboBoxStyles.xaml"/>
+
+                <ResourceDictionary Source="Assets/Styles/TextBlockStyles.xaml"/>
+
+                <ResourceDictionary Source="Assets/Styles/CardStyles.xaml"/>
+
+                <ResourceDictionary Source="Assets/Styles/DataGridStyles.xaml"/>
+
+            </ResourceDictionary.MergedDictionaries>
+
+        </ResourceDictionary>
+
     </Application.Resources>
+
 </Application>
