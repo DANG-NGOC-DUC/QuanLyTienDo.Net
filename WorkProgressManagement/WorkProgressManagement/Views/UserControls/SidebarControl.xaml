@@ -22,8 +22,10 @@
             <TextBlock Text="📋"
                    FontSize="32"
                    HorizontalAlignment="Center"/>
+
             <TextBlock Text="Work Progress"
-                   Style="{StaticResource SubtitleTextStyle}"/>
+                   Style="{StaticResource SubtitleTextStyle}"
+                   HorizontalAlignment="Center"/>
 
             <TextBlock Text="Management"
                    Style="{StaticResource BodyTextStyle}"
